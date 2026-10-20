@@ -24,7 +24,7 @@ if (hero) {
     slides.forEach((slide,i) => { slide.classList.toggle('active',i === active); slide.inert = i !== active; slide.setAttribute('aria-hidden',String(i !== active)); });
     hero.querySelector('[data-slide-count]').textContent = `${String(active + 1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
   };
-  const run = () => { clearInterval(timer); if (!paused && !document.hidden) timer = setInterval(() => paint(1),7000); };
+  const run = () => { clearInterval(timer); if (!paused && !document.hidden) timer = setInterval(() => paint(1),4000); };
   const paintPause = () => { pause.setAttribute('aria-pressed',String(paused)); pause.setAttribute('aria-label',paused ? 'Play slideshow' : 'Pause slideshow'); pause.textContent = paused ? '▷' : 'Ⅱ'; };
   hero.querySelector('[data-prev]').addEventListener('click',() => { paint(-1); run(); });
   hero.querySelector('[data-next]').addEventListener('click',() => { paint(1); run(); });
